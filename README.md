@@ -205,14 +205,21 @@ git checkout [nome_branch]
 ```
 
 ### git branch -r
-> Podemos visualizar as branches já existentes em um repositório remoto através da opção "-r" passado ao comando git branch.
+> Podemos visualizar as branches já existentes em um repositório remoto através da opção **-r** passado ao comando git branch.
 
 ```
 git branch -r
 ```
 
+### git branch -b
+> Podemos criar uma nova a branch e imediatamente utilizá=la através da opção **-b** passado ao comando git branch.
+
+```
+git branch -b [nome_nova_branch]
+```
+
 ### git branch -t
-> Uma vez visto as branches remotas, como copiar uma delas para a máquina local? Isso é feito passando o nome do repositório e da branch remota ao comando git branch, além de indicar o nome da branch que será criada. Mais uma vez, temos o problema de indicar o caminho entre as branches. Para este caso, a opção -t resolve.
+> Uma vez visto as branches remotas, como copiar uma delas para a máquina local? Isso é feito passando o nome do repositório e da branch remota ao comando git branch, além de indicar o nome da branch que será criada. Mais uma vez, temos o problema de indicar o caminho entre as branches. Para este caso, a opção **-t** resolve.
 
 ```
 git branch -t [nome_branch] [alias_repositorio_remoto]/[nome_branch_remota]
