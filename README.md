@@ -97,6 +97,13 @@ git remote add origin https://github.com/jcfonsecagit/propostas_homepage.git
 git remote remove [alias_repositorio_remoto]
 ```
 
+### git fetch [alias_repositorio_remoto]
+> Realizando o comando **git fetch origin**, podemos verificar todas as atualizações que foram realizadas no repositório referente ao origin.
+
+```
+git fetch [alias_repositorio_remoto]
+```
+
 ## Tags
 ### git tag
 > Exibe todas as tags do repositório.
