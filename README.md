@@ -190,7 +190,7 @@ git pull origin master
 git branch
 ```
 
-### git branch
+### git branch [nome_branch]
 > Utilizamos o comando **git branch**, passando como opção o nome da branch que desejamos criar.
 
 ```
@@ -205,7 +205,7 @@ git checkout [nome_branch]
 ```
 
 ### git checkout -b
-> Podemos criar uma nova a branch e imediatamente utilizá=la através da opção **-b** passado ao comando git branch.
+> Podemos criar uma nova a branch e imediatamente utilizá-la através da opção **-b** passado ao comando git branch.
 
 ```
 git branch -b [nome_nova_branch]
