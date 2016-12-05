@@ -37,18 +37,25 @@ git ls-files
 > É possível adicionar um ou mais de um arquivo, todos ou os que satisfaçam uma condição.
 
 > Adiciona o arquivo index.html
+
 ```
 git add index.html
 ```
+
 > adiciona os arquivos index.html e estilo.css
+
 ```
 git add index.html estilo.css
 ```
+
 > Adiciona todos os arquivos do repositório local
+
 ```
 git add .
 ```
+
 > Adiciona todos os arquivo com extensão JAVA
+
 ```
 git add *.java
 ```
@@ -60,7 +67,9 @@ git add *.java
 ```
 git clone git://github.com/[nome_usuario]/[nome_repositorio].git
 ```
+
 > Clona o repositório remoto **git-guide.git** do usuário **barcanjo**
+
 ```
 git clone git://github.com/barcanjo/git-guide.git
 ```
@@ -140,7 +149,9 @@ git whatchanged -p
 ```
 git push [alias_repositorio_remoto] [branch_repositorio_remoto]
 ```
+
 > Envia todas as alterações para o respositório remoto chamado **origin** na branch **master**
+
 ```
 git pusuh origin master
 ```
@@ -151,9 +162,9 @@ git pusuh origin master
 ```
 git pull [alias_repositorio_remoto] [branch_repositorio_remoto]
 ```
+
 > Recebe as alterações do repositório remoto configurado com o nome **origin** e as envia para a branc **master**
+
 ```
 git pull origin master
 ```
-
-
