@@ -211,6 +211,13 @@ git checkout [nome_branch]
 git branch -b [nome_nova_branch]
 ```
 
+### git checkout -t
+> Realizando o comando **git checkout -t**, uma nova branch local chamada design é criada, muda-se para essa branch, copiamos todo o conteúdo da branch remota design do repositório referente ao origin e trackeamos as duas branches.
+
+```
+git checkout -t [alias_repositorio_remoto]/[branch_repositorio_remoto]
+```
+
 ### git branch -r
 > Podemos visualizar as branches já existentes em um repositório remoto através da opção **-r** passado ao comando git branch.
 
