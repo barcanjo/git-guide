@@ -212,7 +212,7 @@ git branch -b [nome_nova_branch]
 ```
 
 ### git checkout -t
-> Realizando o comando **git checkout -t**, uma nova branch local chamada design é criada, muda-se para essa branch, copiamos todo o conteúdo da branch remota design do repositório referente ao origin e trackeamos as duas branches.
+> Realizando o comando **git checkout -t origin/design**, uma nova branch local chamada design é criada, muda-se para essa branch, copiamos todo o conteúdo da branch remota design do repositório referente ao origin e trackeamos as duas branches.
 
 ```
 git checkout -t [alias_repositorio_remoto]/[branch_repositorio_remoto]
@@ -244,4 +244,11 @@ git branch -d [nome_branch_local]
 
 ```
 git branch -a
+```
+
+### git push origin :[nome_branch_remota]
+> Ao digitarmos o comando git push origin :design a branch remota design do repositório referente ao origin é deletada.
+
+```
+git push origin :design
 ```
