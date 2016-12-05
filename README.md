@@ -90,6 +90,13 @@ git remote add [alias_do_repositorio] [uri_do_repositorio]
 git remote add origin https://github.com/jcfonsecagit/propostas_homepage.git
 ```
 
+### git remote remove
+> Para excluirmos um repositório remoto do repositório local, ou seja, não ter mais um repositório central para onde enviar e receber as alterações, podemos utilizar o parâmetro **remove**.
+
+```
+git remote remove [alias_repositorio_remoto]
+```
+
 ## Tags
 ### git tag
 > Exibe todas as tags do repositório.
@@ -153,7 +160,13 @@ git push [alias_repositorio_remoto] [branch_repositorio_remoto]
 > Envia todas as alterações para o respositório remoto chamado **origin** na branch **master**
 
 ```
-git pusuh origin master
+git push origin master
+```
+
+> Podemos indicar o caminho (track) da branch remota para a nossa branch local. Isso pode ser feito no instante em que criamos a branch remota através da opção "-u".
+
+```
+git push -u [alias_repositorio_remoto] [branch_repositorio_remoto]
 ```
 
 ### git pull
@@ -167,4 +180,47 @@ git pull [alias_repositorio_remoto] [branch_repositorio_remoto]
 
 ```
 git pull origin master
+```
+
+## Branch
+### git branch
+> Nos fornece todas as branches criadas na máquina. Ele também possibilita visualizar qual a branch que estamos atualmente através de um "*" que precede o nome da branch atual.
+
+```
+git branch
+```
+
+### git branch [nome_branch]
+> Utilizamos o comando git branch, passando como opção o nome da branch que desejamos criar.
+
+```
+git branch [nome_branch]
+```
+
+### git checkout
+> Se quisermos alterar o projeto numa outra branch isto é feito através do comando **git checkout** passando o nome da branch para a qual desejamos mudar.
+
+```
+git checkout [nome_branch]
+```
+
+### git branch -r
+> Podemos visualizar as branches já existentes em um repositório remoto através da opção "-r" passado ao comando git branch.
+
+```
+git branch -r
+```
+
+### git branch -t
+> Uma vez visto as branches remotas, como copiar uma delas para a máquina local? Isso é feito passando o nome do repositório e da branch remota ao comando git branch, além de indicar o nome da branch que será criada. Mais uma vez, temos o problema de indicar o caminho entre as branches. Para este caso, a opção -t resolve.
+
+```
+git branch -t [nome_branch] [alias_repositorio_remoto]/[nome_branch_remota]
+```
+
+### git branche -d
+> Para excluir uma branch local utilizamos o parâmetro **-d**
+
+```
+git branch -d [nome_branch_local]
 ```
