@@ -204,18 +204,18 @@ git branch [nome_branch]
 git checkout [nome_branch]
 ```
 
+### git checkout -b
+> Podemos criar uma nova a branch e imediatamente utilizá=la através da opção **-b** passado ao comando git branch.
+
+```
+git branch -b [nome_nova_branch]
+```
+
 ### git branch -r
 > Podemos visualizar as branches já existentes em um repositório remoto através da opção **-r** passado ao comando git branch.
 
 ```
 git branch -r
-```
-
-### git branch -b
-> Podemos criar uma nova a branch e imediatamente utilizá=la através da opção **-b** passado ao comando git branch.
-
-```
-git branch -b [nome_nova_branch]
 ```
 
 ### git branch -t
