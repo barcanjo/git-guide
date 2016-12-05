@@ -191,7 +191,7 @@ git branch
 ```
 
 ### git branch
-> Utilizamos o comando git branch, passando como opção o nome da branch que desejamos criar.
+> Utilizamos o comando **git branch**, passando como opção o nome da branch que desejamos criar.
 
 ```
 git branch [nome_branch]
@@ -230,4 +230,11 @@ git branch -t [nome_branch] [alias_repositorio_remoto]/[nome_branch_remota]
 
 ```
 git branch -d [nome_branch_local]
+```
+
+### git branch -a
+> Nos fornece uma opção ao comando **git branch** para listar tanto as branches locais quanto as remotas.
+
+```
+git branch -a
 ```
