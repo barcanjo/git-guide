@@ -190,7 +190,7 @@ git pull origin master
 git branch
 ```
 
-### git branch [nome_branch]
+### git branch
 > Utilizamos o comando git branch, passando como opção o nome da branch que desejamos criar.
 
 ```
