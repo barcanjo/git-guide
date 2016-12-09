@@ -259,3 +259,47 @@ git branch -a
 ```
 git push origin :design
 ```
+
+## Rebase e Merge
+### git rebase
+> O comando permite inidicar onde é a nova base de commits que deve ser utilizada para resolver conclitos commits por commits. O processo consiste em:
+
+> Selecionar a branch que será a nova base de commit utilizando o comando **git checkout**. Por exemplo, podemos dizer que a branch que receberá os commits chama-se *desenvolvimento*.
+
+```
+git checkout desenvolvimento
+```
+
+> Aplicar o **git rebase** para transferir os commits da branch que possui as mudanças que não se tem na branch atual. Isso fará com que todos os commits que foram aplicados na outra branch, e que não estão contidos na atual, sejam copias sem gerar mensagens de erros ou conflitos.
+No momento em que os commits são tratados uma no branch temporária é criada, e é nela que os conflitos devem ser tratados.
+Vamos supor que os commits estão na branch *master*.
+
+```
+git rebase master
+```
+
+### git rebase --skip
+> Em caso de conflitos em um rebase, é possível utilizar o comando *git rebase --skip* para descartar seu commit atual e manter o que veio da outra branch.
+
+### git rebase --abort
+> Em caso de conflitos de um reabase, é possível cancelar o rebase e voltar para o estado antes do rebase. Para isso utilize o comando *git rebase --abort* em caso de falhas do rebase.
+
+### git rebase --continue
+> Em caso de conflitos de um rebase, é possível corrigi-los e continuar o rebase. Para isso, após o Git apontar o(s) arquivo(s) conflitado(s) você deve (manualmente) corrigir e editar o código para a nova versão, adicioná-lo novamente com o comando *git add [nome_aquivo]* e criar um commit *git commit -m "correção de conflito no arquivo [nome_arquivo]* e cotinuar o rebase com o comando *git rebase --continue*.
+Vamos supor que um rebase tenha gerado conflito nos arquivos *proposta1.html* e *estilo.css*. Para corrigir devemos utilizar as ações:
+
+```
+(abrir o arquivo proposta1.html e editá-lo com o conteúdo que deve ser mantido)
+(abrir o arquivo estilo.css e editá-lo com o conteúdo que deve ser mantido)
+git add proposta1.html estilo.css
+git commit -m "correcao de conflitos nos arquivos proposta1.html e estilo.css"
+git rebase --continue
+```
+
+### git merge
+> O comando permite mover os commits de uma branch para outra, gerando log de merges, e possivelmente de conflitos.
+Vamos supor que queremos mover os commits da branch *desenvolvimento* para a branch *master*, então devemos selecionar a branch master com o comando *git checkout master* e então utilizar o comando *git merge*:
+
+```
+git merge desenvolvimento
+```
