@@ -303,3 +303,103 @@ Vamos supor que queremos mover os commits da branch *desenvolvimento* para a bra
 ```
 git merge desenvolvimento
 ```
+
+## Desfazendo alterações
+### git checkout
+> O comando descarta todas as alterações que foram realizadas desde o último commit, isto é, volta o seu sistema para o estado em que se encontra no HEAD.
+Vamos supor que queremos desfazer as alterações feitas no arquivo proposta_1.html, que ainda se encontra no Working Directory, para a sua versão no última commit. Para isso utilizaremos o comando *git checkout*:
+
+```
+git checkout proposta_1.html
+```
+
+> Vamos supor que estejamos trabalhando numa branch para desenvolvimento, chamada *desenvolvimento*, e queremos desfazer as alterações feitas no arquivo proposta_1.html e voltá-lo a um estado que está em outra branch, por exemplo a *master*. Digamos que em algum momento outro usuário atualizou o arquivo proposta_1.html e colocou essa alteração na branch master.
+Você pode *voltar para a branch master* com o comando **git checkout master** e dar um **git pull** para trazer todas as mudanças nessa branch. Depois disso, volte para a branche desenvolvimento com o comando **git checkout desenvolvimento** e utilize o *git checkout* para desfazer as mudanças do seu arquivo proposta_1.html e voltá-lo para o estado da branch *master*:
+
+```
+git checkout master proposta_1.html
+```
+
+> Também é possível voltar para o estado do código do HEAD:
+
+```
+git checkout HEAD
+```
+
+### git reset
+> O comando permite remover arquivos do INDEX após tere sido adicionados com o comando *git add*.
+Vamos supor que queremos desfazer as alterações do arquivo *proposta_1.html* mas ele já foi adicionado do INDEX com o comando **git add proposta_1.html**. Não é possível utilizar o *git checkout* pois esse desfaz as alterações de arquivos que estão no Working Directory.
+Para essa tarefa podemos usar o comando **git reset** e logo em seguida o *git checkout*:
+
+```
+git reset HEAD proposta_1.html
+git checkout proposta_1.html
+```
+
+## Guardando alterações temporariamente
+### git stash
+> O comando permite guardar temporariamente alterações que estão no Working Directory para que depois possam ser reaplicadas ao seucódigo.
+Vamos supor que enquanto você estava desenvolvendo percebeu que um certo commit foi feito com um bug. Você pode guardar temporariamente as mudanças atuais, voltar ao estado do commit com bug utilizando o comando **git reset HEAD [hash_commit]** ou **git reset HEAD**, resolver o bug, comitar e recuperar as mudanças que estão no *git stash*.
+Para armazenar as mudanças temporariamente utilize o comando **git stash**:
+
+```
+git stash
+```
+
+### git stash list
+> Permite verificar quais são os stash criados e disponíveis.
+A saída pode gerar uma lista de todos os stash, no formato "WIP on [nome_do_branch]: [hash] [mensagem_do_commit_head]".
+
+```
+git stash list
+```
+
+### git stash pop
+> Permite recuperar o **mais atual** stash e aplicar suas mudanças. É utilizado sempre que se quer voltar a trabalhar nas mudanças que foram armazenadas com o comando **git stash**:
+
+```
+git stash pop
+```
+
+### git stash apply (ou também git stash pop)
+> Permite recuperar um **stash específico** e aplicar suas mudanças. Utilize o comando **git stash list** para saber o nome do stash que se quer aplicar.
+Vamos supor que o comando **git stash list** mostrou que existe um stash chamado *stash@{1}* (no caso o segundo stash mais atual), e queremos aplicá-lo. Para isso vamos utilizar o comando **git stash apply** seguido do nome do stash:
+
+```
+git stash apply stash@{1}
+```
+
+## Descartando commits
+### git reset
+> Descarta todos commits realizados e retorna o código para um commit específico.
+É geralmente utilizado quando se encontra um bug e se quer desfazer todas as mudanças, e voltar seu HEAD para o commit informado.
+Todas as mudanças atuais serão enviadas para o seu Working Directory, e poderão ser adicionadas ao seu INDEX e HEAD.
+Vamos supor que você queira voltar seu HEAD para o commit com o hash **b6c7cc8e3fea9b255b5845e1114588206679f609**:
+
+```
+git reset b6c7cc8e3fea9b255b5845e1114588206679f609
+```
+
+### git revert
+> Quando desejamos remover commits que foram realizados há algum tempo, a melhor maneira seria revertendo-os, isto é, apenas desfazendo as alterações daqueles commits. Todos os outros commits serão mantidos em seu respectivo estado. Isso é feito utilizando o comando git revert passando como argumento o hash do commit que se deseja reverter. Um novo commit revertendo as alterações do commit escolhido será realizado.
+
+```
+git revert b6c7cc8e3fea9b255b5845e1114588206679f609
+```
+
+### git bisect
+> O comando permite verificar bugs em vários commits analisando commit a commit se o código está "bom" ou "ruim".
+Iniciamos o *git bisect* com o comando **git bisect start**, e em seguida informamos o commit ruim com o comando **git bisect bad**. Podemos informar que o commit ruim é o atual (HEAD):
+
+```
+git bisect start
+git bisect bad HEAD
+```
+
+> Em seguida devemos informar qual o commit bom. Para isso utilizaremos o comando **git bisect good** seguido do hash do commit bom. Isso criará um intervalo de commits entre o bom e ruim, onde serão feitas as análises para encontrar em qual commit o bug foi criado:
+
+```
+git bisect good b6c7cc8e3fea9b255b5845e1114588206679f609
+```
+
+> Com isso, commit a commit o Git exibirá o seu hash e nos perguntará se nele o código está OK ou não. Para informar devemos utilizar o comando **git bisect bad** ou **git bisect good** dizendo que o código não estava funcionando nesse commit ou estava funcionando, respectivamente.
