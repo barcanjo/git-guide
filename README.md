@@ -344,6 +344,11 @@ git checkout proposta_1.html
 
 ### git reset --hard
 > Excluir as alterações permanentemente (ao contrário do **git reset** que move para o Working Directory e do **git reset --soft** que move para o INDEX).
+> Por exemplo, é possível descartar permanentemente as alterações realizadas no último commit:
+
+```
+git reset --hard HEAD~1
+```
 
 ## Guardando alterações temporariamente
 ### git stash
