@@ -148,6 +148,9 @@ git log
 ### git log --stat
 > Exibe de forma resumida todos os arquivos alterados no commit.
 
+### git log --graph
+> Permite visualizar o log e se houve desvios (utilização) da branch master para a realização dos commits.Incl 
+
 ### git whatchanged
 > Permite visualizar todas as alterações do repositório, incluindo os arquivos modificados.
 
