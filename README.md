@@ -336,6 +336,12 @@ git reset HEAD proposta_1.html
 git checkout proposta_1.html
 ```
 
+### git reset --soft
+> Move as alterações para o INDEX (ao contrário do **git reset** que move para o Working Directory).
+
+### git reset --hard
+> Excluir as alterações permanentemente (ao contrário do **git reset** que move para o Working Directory e do **git reset --soft** que move para o INDEX).
+
 ## Guardando alterações temporariamente
 ### git stash
 > O comando permite guardar temporariamente alterações que estão no Working Directory para que depois possam ser reaplicadas ao seucódigo.
