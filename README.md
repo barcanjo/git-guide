@@ -336,6 +336,9 @@ git reset HEAD proposta_1.html
 git checkout proposta_1.html
 ```
 
+### git reset HEAD~N
+> Ao digitarmos "HEAD~" seguido de um número inteiro n, será feita uma referência ao n-ésimo commit anterior ao HEAD. Por exemplo, HEAD~1, faz referência ao penúltimo commit e HEAD~2, ao antepenúltimo. No caso específico do penúltimo commit, também pode-se referenciá-lo utilizando o atalho HEAD^.
+
 ### git reset --soft
 > Move as alterações para o INDEX (ao contrário do **git reset** que move para o Working Directory).
 
