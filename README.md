@@ -294,14 +294,13 @@ git rebase master
 > Em caso de conflitos de um reabase, é possível cancelar o rebase e voltar para o estado antes do rebase. Para isso utilize o comando *git rebase --abort* em caso de falhas do rebase.
 
 ### git rebase --continue
-> Em caso de conflitos de um rebase, é possível corrigi-los e continuar o rebase. Para isso, após o Git apontar o(s) arquivo(s) conflitado(s) você deve (manualmente) corrigir e editar o código para a nova versão, adicioná-lo novamente com o comando *git add [nome_aquivo]* e criar um commit *git commit -m "correção de conflito no arquivo [nome_arquivo]* e cotinuar o rebase com o comando *git rebase --continue*.
+> Em caso de conflitos de um rebase, é possível corrigi-los e continuar o rebase. Para isso, após o Git apontar o(s) arquivo(s) conflitado(s) você deve (manualmente) corrigir e editar o código para a nova versão, adicioná-lo novamente com o comando *git add [nome_aquivo]* e cotinuar o rebase com o comando *git rebase --continue*.
 Vamos supor que um rebase tenha gerado conflito nos arquivos *proposta1.html* e *estilo.css*. Para corrigir devemos utilizar as ações:
 
 ```
 (abrir o arquivo proposta1.html e editá-lo com o conteúdo que deve ser mantido)
 (abrir o arquivo estilo.css e editá-lo com o conteúdo que deve ser mantido)
 git add proposta1.html estilo.css
-git commit -m "correcao de conflitos nos arquivos proposta1.html e estilo.css"
 git rebase --continue
 ```
 
