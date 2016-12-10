@@ -387,6 +387,20 @@ git stash apply stash@{1}
 
 > O **git stash pop** após aplicar o stash o **NÃO** remove permanentemente da lista.
 
+### git stash drop
+> Exclui todos os estados do git stash.
+
+```
+git stash drop
+```
+
+### git stash drop stash@{?}
+> Permite excluir um stash específico. Por exemplo, podemos excluir o stash **stash@{2}**:
+
+```
+git stash drop stash@{2}
+```
+
 ## Descartando commits
 ### git reset
 > Descarta todos commits realizados e retorna o código para um commit específico.
