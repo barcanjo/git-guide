@@ -142,6 +142,12 @@ git blame index.html
 git log
 ```
 
+### git log -p
+> Exibe todos os arquivos alteras alterados nos commits e suas linhas modificadas.
+
+### git log --stat
+> Exibe de forma resumida todos os arquivos alterados no commit.
+
 ### git whatchanged
 > Permite visualizar todas as alterações do repositório, incluindo os arquivos modificados.
 
