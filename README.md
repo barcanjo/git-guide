@@ -375,6 +375,8 @@ git stash list
 git stash pop
 ```
 
+> O **git stash pop** após aplicar o stash o remove permanentemente da lista.
+
 ### git stash apply (ou também git stash pop)
 > Permite recuperar um **stash específico** e aplicar suas mudanças. Utilize o comando **git stash list** para saber o nome do stash que se quer aplicar.
 Vamos supor que o comando **git stash list** mostrou que existe um stash chamado *stash@{1}* (no caso o segundo stash mais atual), e queremos aplicá-lo. Para isso vamos utilizar o comando **git stash apply** seguido do nome do stash:
@@ -382,6 +384,8 @@ Vamos supor que o comando **git stash list** mostrou que existe um stash chamado
 ```
 git stash apply stash@{1}
 ```
+
+> O **git stash pop** após aplicar o stash o **NÃO** remove permanentemente da lista.
 
 ## Descartando commits
 ### git reset
