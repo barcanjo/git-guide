@@ -145,11 +145,14 @@ git log
 ### git log -p
 > Exibe todos os arquivos alteras alterados nos commits e suas linhas modificadas.
 
+### git log -p [arquivo]
+> Exibe todas os commits de um determinado arquivo.
+
 ### git log --stat
 > Exibe de forma resumida todos os arquivos alterados no commit.
 
 ### git log --graph
-> Permite visualizar o log e se houve desvios (utilização) da branch master para a realização dos commits.Incl 
+> Permite visualizar o log e se houve desvios (utilização) da branch master para a realização dos commits.
 
 ### git whatchanged
 > Permite visualizar todas as alterações do repositório, incluindo os arquivos modificados.
